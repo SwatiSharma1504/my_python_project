@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jarvis - AI Assistant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span class="logo">🤖</span>
+      <span class="brand">Jarvis</span>
+      <button id="closeSidebar" aria-label="Close sidebar" style="display:none;">✖</button>
+    </div>
+    <nav>
+      <div class="history-label">Chat History</div>
+      <div id="chatHistory"></div>
+      <ul>
+        <li><button onclick="window.location.reload()">+ New Chat</button></li>
+        <li>
+          <label for="uploadFile" class="upload-btn">Upload File</label>
+          <input type="file" id="uploadFile" style="display:none">
+        </li>
+        <li><button id="downloadChat">Download Chat</button></li>
+        <li><button id="toggleDark">Toggle Dark Mode</button></li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="main">
+    <header>
+      <button id="sidebarToggle" aria-label="Open sidebar">☰</button>
+      <span class="header-title">Jarvis</span>
+    </header>
+    <main class="chat-container" id="chat">
+      <div class="message bot">
+        <div class="avatar bot">🤖</div>
+        <div class="bubble">Hello! I am Jarvis, your AI assistant. How can I help you?</div>
+      </div>
+    </main>
+    <form class="input-container" onsubmit="sendMessage(); return false;">
+      <input type="text" id="userInput" placeholder="Message Jarvis..." autocomplete="off" aria-label="Type your message">
+      <button type="submit" aria-label="Send message">➤</button>
+    </form>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
